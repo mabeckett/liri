@@ -1,3 +1,5 @@
+var keys = require('./keys.js');
+var random = require('./random.txt');
 var action = process.argv[2];
 
 switch(action) {
