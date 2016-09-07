@@ -51,18 +51,32 @@ function movie() {
 
 			if (!error && response.statusCode == 200) {
 
-				console.log("Release Year: " + JSON.parse(body)["Title"]);
-				console.log("Release Year: " + JSON.parse(body)["Year"]);
-				console.log("Release Year: " + JSON.parse(body)["imdbRating"]);
-				console.log("Release Year: " + JSON.parse(body)["Country"]);
-				console.log("Release Year: " + JSON.parse(body)["Language"]);
-				console.log("Release Year: " + JSON.parse(body)["Plot"]);
-				console.log("Release Year: " + JSON.parse(body)["Actors"]);
-				console.log("Release Year: " + JSON.parse(body)["tomatoRating"]);
-				console.log("Release Year: " + JSON.parse(body)["tomatoURL"]);
+				console.log("Title: " + JSON.parse(body).Title);
+				console.log("Release Year: " + JSON.parse(body).Year);
+				console.log("Imdb Rating: " + JSON.parse(body).imdbRating);
+				console.log("Country: " + JSON.parse(body).Country);
+				console.log("Language: " + JSON.parse(body).Language);
+				console.log("Plot: " + JSON.parse(body).Plot);
+				console.log("Actors: " + JSON.parse(body).Actors);
+				console.log("Rotten Tomato Rating: " + JSON.parse(body).tomatoRating);
+				console.log("Rotten Tomato Url: " + JSON.parse(body).tomatoURL);
 			}
 		});
 }
-var twitter = require('twitter');
+//twitter api function//
+function tweets() {
 
+	var client = new Twitter({
+	  consumer_key: keys.twitterKeys.consumer_key,
+	  consumer_secret: keys.twitterKeys.consumer_secret,
+	  access_token_key: keys.twitterKeys.access_token_key,
+	  access_token_secret: keys.twitterKeys.access_token_secret
+	});
+	 
+	var params = {screen_name: 'mabeckett_'};
+	client.get('statuses/user_timeline', params, function(error, tweets, response) {
+	  if (!error) {
+	    console.log(tweets);
+	  }
+});
 var spotify = require('spotify');
