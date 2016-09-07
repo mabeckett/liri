@@ -83,6 +83,10 @@ function tweets() {
 	  if (!error) {
 	    console.log(tweets);
 	  }
-});
+	});
+}
 //spotify api function//
-var spotify = require('spotify');
+function spotify() {
+
+	var spotify = require('spotify');
+}
