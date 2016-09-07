@@ -48,7 +48,7 @@ function movie() {
 		} else {
 			movieName = 'Mr.+Nobody';
 		}
-	var queryUrl = 'http://www.omdbapi.com/?t=' + movieName +'&tomatoes=&y=&plot=short&r=json';
+	var queryUrl = 'http://www.omdbapi.com/?t=' + movieName +'&tomatoes=true&y=&plot=short&r=json';
 
 		console.log(queryUrl);
 
