@@ -43,6 +43,11 @@ function movie() {
 
 	var request = require('request');
 	var movieName = process.argv[3];
+		if (movieName != '') {
+			movieName = movieName;
+		} else {
+			movieName = 'Mr.+Nobody';
+		}
 	var queryUrl = 'http://www.omdbapi.com/?t=' + movieName +'&tomatoes=&y=&plot=short&r=json';
 
 		console.log(queryUrl);
@@ -79,4 +84,5 @@ function tweets() {
 	    console.log(tweets);
 	  }
 });
+//spotify api function//
 var spotify = require('spotify');
