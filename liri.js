@@ -81,6 +81,7 @@ function tweets() {
 	var params = {screen_name: 'mabeckett_'};
 	client.get('statuses/user_timeline', params, function(error, tweets, response) {
 	  if (!error) {
+	  	for (i = 0; i <= 20; i++);
 	    console.log(tweets);
 	  }
 	});
