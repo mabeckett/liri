@@ -32,8 +32,8 @@ function doThis() {
 
 		fs.readFile('random.txt', 'utf8', function(error, data) {
 
-		    if (err) {
-		        return console.log(err);
+		    if (error) {
+		        return console.log(error);
 		    }
 		    console.log('random.txt updated');
 		}); 
