@@ -46,7 +46,7 @@ function movie() {
 		if (movieName != '') {
 			movieName = movieName;
 		} else {
-			movieName = 'Mr.+Nobody';
+			movieName = 'Mr. Nobody';
 		}
 	var queryUrl = 'http://www.omdbapi.com/?t=' + movieName +'&tomatoes=true&y=&plot=short&r=json';
 
@@ -82,7 +82,7 @@ function tweets() {
 	client.get('statuses/user_timeline', params, function(error, tweets, response) {
 	  if (!error) {
 	  	for (i = 0; i <= 20; i++);
-	    console.log(tweets);
+	    console.log(tweets[i]);
 	  }
 	});
 }
@@ -90,4 +90,23 @@ function tweets() {
 function spotify() {
 
 	var spotify = require('spotify');
+	var music = process.argv[3];
+	if (music != '') {
+			music = music;
+		} else {
+			music = 'The Sign by Ace of Base';
+		}
+
+	spotify.search({ type: 'track', query: music }, function(error, data) {
+	    if (error) {
+	        console.log('Error occurred: ' + error);
+	        return;
+	    } else {
+	    	console.log('Artist: ' + JSON.parse(body).Artist);
+	    	console.log('Song: ' + JSON.parse(body).Song);
+	    	console.log('Preview: ' + JSON.parse(body).Preview);
+	    	console.log('Album: ' + JSON.parse(body).Album);
+	    }
+	});
+
 }
